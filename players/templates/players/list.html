@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    {% block content %}
+    <h1> List Players </h1>
+    <ul>
+    {% for player in players %}
+        <li>{{ player.name }} - {{ player.team.name }} - {{ player.get_country_display }}</li>
+<!--        {% for comp in player.team.competitions.all %}-->
+<!--        {{ comp.year }} - {{ comp.name }}-->
+<!--        {% endfor %}-->
+    {% endfor %}
+    {% endblock %}
+</body>
+</html>
