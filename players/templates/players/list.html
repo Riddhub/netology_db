@@ -10,9 +10,9 @@
     <ul>
     {% for player in players %}
         <li>{{ player.name }} - {{ player.team.name }} - {{ player.get_country_display }}</li>
-<!--        {% for comp in player.team.competitions.all %}-->
-<!--        {{ comp.year }} - {{ comp.name }}-->
-<!--        {% endfor %}-->
+        {% for comp in player.team.competition.all %}
+        {{ comp.year }} - {{ comp.name }}
+        {% endfor %}
     {% endfor %}
     {% endblock %}
 </body>

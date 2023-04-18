@@ -5,8 +5,7 @@ from players.models import *
 
 def list_players(request):
     template = 'players/list.html'
-    players = Player.objects.select_related(
-        'team').all()
+    players = Player.objects.select_related('team',).prefetch_related('team__competition',).all()
 
     if 'country' in request.GET:
         # players = players.filter(country=request.GET['country'])

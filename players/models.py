@@ -35,9 +35,7 @@ class Player(models.Model):
 class Competition(models.Model):
     name = models.CharField(max_length=30)
     year = models.CharField(max_length=30, default=get_year)
-    teams = models.ManyToManyField(Team,
-                                   blank=True,
-                                   related_name='competition')
+    teams = models.ManyToManyField(Team, blank=True, related_name='competition')
 
     def __str__(self):
         return f'{self.name} - {self.year}'
